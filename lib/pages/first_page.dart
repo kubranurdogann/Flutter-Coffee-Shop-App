@@ -1,6 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 
-import 'package:coffee_shop_app/pages/home_page.dart';
+import 'package:coffee_shop_app/pages/shop_page.dart';
 import 'package:flutter/material.dart';
 
 class FirstPage extends StatelessWidget {
@@ -49,7 +49,7 @@ class FirstPage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>const HomePage()),
+                  MaterialPageRoute(builder: (context) => ShopPage()),
                 );
               },
               child: Container(

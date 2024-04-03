@@ -29,49 +29,93 @@ class _CartPageState extends State<CartPage> {
       );
     }
 
-    return Consumer<CoffeeShop>(
-      builder: (context, value, child) => Expanded(
-        child: Container(
-          decoration: BoxDecoration(color: Colors.brown[100]),
-          child: SafeArea(
-            child: Column(
-              children: [
-                const Padding(
-                  padding:  EdgeInsets.all(8.0),
-                  child: Text(
-                    "Your Cart",
-                    style: TextStyle(
-                        fontSize: 20, color: Color.fromARGB(255, 78, 52, 46)),
-                  ),
-                ),
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: value.userCart.length,
-                    itemBuilder: (context, index) {
-                      Coffee eachCoffee = value.userCart[index];
-                      return Padding(
-                        padding: const EdgeInsets.only(left: 18, right: 18),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)),
-                          margin: const EdgeInsets.only(bottom: 5),
-                          padding: const EdgeInsets.all(5),
-                          child: ListTile(
-                            title: Text(eachCoffee.name),
-                            subtitle: Text(eachCoffee.price),
-                            leading: Image.asset(eachCoffee.imagePath),
-                            trailing: IconButton(
-                              icon: const Icon(Icons.delete),
-                              onPressed: () => removeFromCart(eachCoffee),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.brown,
+        title: Text("Your Cart"),
+      ),
+      body: Center(
+        child: Consumer<CoffeeShop>(
+          builder: (context, value, child) => Expanded(
+            child: Container(
+              decoration: BoxDecoration(color: Colors.brown[100]),
+              child: SafeArea(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: value.userCart.length,
+                        itemBuilder: (context, index) {
+                          Coffee eachCoffee = value.userCart[index];
+                          return Padding(
+                            padding: const EdgeInsets.only(left: 18, right: 18),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)),
+                              margin: const EdgeInsets.only(bottom: 5),
+                              padding: EdgeInsets.all(5),
+                              child: ListTile(
+                                title: Text(
+                                  eachCoffee.name,
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                subtitle: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "${eachCoffee.price.toString()}tl",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w700),
+                                    ),
+                                    Text("Adet:${eachCoffee.quantity}")
+                                  ],
+                                ),
+                                leading: Image.asset(eachCoffee.imagePath),
+                                trailing: IconButton(
+                                  icon: Icon(Icons.delete),
+                                  onPressed: () => removeFromCart(eachCoffee),
+                                ),
+                              ),
                             ),
-                          ),
+                          );
+                        },
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Total: ${value.total.toString()}"),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      color: Colors.brown,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 20, bottom: 20, left: 100, right: 100),
+                        child: Text(
+                          "Buy it",
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.brown[100]),
                         ),
-                      );
-                    },
-                  ),
-                )
-              ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ),
