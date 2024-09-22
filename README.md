@@ -1,13 +1,13 @@
 # Coffe Shop App
 
-## Uygulama Özellikleri: 
-### Kullanıcı Girişi ve Kaydı: Firebase Authentication ile güvenli oturum açma ve kayıt işlemleri.
-### Sepet Yönetimi: Kullanıcılar ürünleri sepete ekleyebilir, miktarlarını güncelleyebilir veya sepetten ürün çıkarabilir.
-### Veri Depolama: Kullanıcıya özel sepet ve ürün verileri Firestore'da saklanır.
-### Ürün Listesi: Kahve çeşitleri, fiyatlar ve içerik bilgileriyle birlikte listelenir.
-### Gerçek Zamanlı Senkronizasyon: Firebase ile kullanıcı sepeti, giriş yaptığı cihazlar arasında senkronize edilir.
-### Kullanıcı Bilgileri: Kullanıcı adı ve e-posta bilgileri ana sayfada görüntülenir.
-### Dinamik Ürün Miktarı: Kullanıcı giriş yaptığında ürün miktarları sıfırlanır ve sepet verileri tekrar yüklenir.
+### Uygulama Özellikleri: 
+#### Kullanıcı Girişi ve Kaydı: Firebase Authentication ile güvenli oturum açma ve kayıt işlemleri.
+#### Sepet Yönetimi: Kullanıcılar ürünleri sepete ekleyebilir, miktarlarını güncelleyebilir veya sepetten ürün çıkarabilir.
+#### Veri Depolama: Kullanıcıya özel sepet ve ürün verileri Firestore'da saklanır.
+#### Ürün Listesi: Kahve çeşitleri, fiyatlar ve içerik bilgileriyle birlikte listelenir.
+#### Gerçek Zamanlı Senkronizasyon: Firebase ile kullanıcı sepeti, giriş yaptığı cihazlar arasında senkronize edilir.
+#### Kullanıcı Bilgileri: Kullanıcı adı ve e-posta bilgileri ana sayfada görüntülenir.
+#### Dinamik Ürün Miktarı: Kullanıcı giriş yaptığında ürün miktarları sıfırlanır ve sepet verileri tekrar yüklenir.
 
 </br></br>
 #### Uygulama ekran görüntüleri:></br>
